@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: svc1
-        image: 18301187/my-node-app:latest  # Replace with your actual Docker image
+        image: 18301187/test-cicd-app:latest  # Replace with your actual Docker image
         ports:
         - containerPort: 3000  # Adjust the port if your Node.js app is running on a different port
 ---
