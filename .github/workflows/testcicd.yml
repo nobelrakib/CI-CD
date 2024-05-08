@@ -24,4 +24,11 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: '${{ secrets.DOCKERHUB_USERNAME }}/test-cicd-app'
-      
+      - name: Restart K3S deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: '${{ secrets.SSH_HOST }}'
+          username: '${{ secrets.SSH_USERNAME }}'
+          port: '${{ secrets.SSH_PORT }}'
+          key: '${{ secrets.SSH_KEY }}'
+          script: kubectl rollout restart deployment svc1
