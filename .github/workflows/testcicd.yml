@@ -31,4 +31,4 @@ jobs:
           username: '${{ secrets.SSH_USERNAME }}'
           port: '${{ secrets.SSH_PORT }}'
           key: '${{ secrets.SSH_KEY }}'
-          script: kubectl rollout restart deployment svc1
+          script: sudo kubectl rollout restart deployment svc1
